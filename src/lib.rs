@@ -1,12 +1,14 @@
-pub fn say_hello() {
-    println!("Hello, world!");
+pub fn print(limit: u8) {
+    let numbers = generate_sequnce(limit);
+    output_sequence(&numbers);
 }
 
-pub fn print() {
-    let array_numbers = [1, 2, 3, 4, 5];
-    output_sequence(&array_numbers);
-    let vector_numbers = vec![1, 2, 3, 4, 5];
-    output_sequence(&vector_numbers);
+fn generate_sequnce(limit: u8) -> Vec<u8> {
+    let mut numbers = Vec::new();
+    for n in 1..=limit {
+        numbers.push(n);
+    }
+    numbers
 }
 
 fn output_sequence(numbers: &[u8]) {
